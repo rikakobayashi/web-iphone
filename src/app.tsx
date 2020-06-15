@@ -286,10 +286,8 @@ class App extends React.Component<AppProps, AppState> {
                       onClick={() => this.clickButton(9)}
                       ref={(ref) => (this.keys[9] = ref!)}
                     >
-                      <div>
-                        <span className="number">9</span>
-                        <span className="alphabet">WXYZ</span>
-                      </div>
+                      <span className="number">9</span>
+                      <span className="alphabet">WXYZ</span>
                     </div>
                   </div>
                   <div className="key-wrapper key-0">
