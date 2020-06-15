@@ -201,83 +201,105 @@ class App extends React.Component<AppProps, AppState> {
                   </div>
                 </div>
                 <div className="keys">
-                  <div
-                    className="key key-1"
-                    onClick={() => this.clickButton(1)}
-                    ref={(ref) => (this.keys[1] = ref!)}
-                  >
-                    <span className="number">1</span>
+                  <div className="key-wrapper key-1">
+                    <div
+                      className="key"
+                      onClick={() => this.clickButton(1)}
+                      ref={(ref) => (this.keys[1] = ref!)}
+                    >
+                      <span className="number">1</span>
+                    </div>
                   </div>
-                  <div
-                    className="key key-2"
-                    onClick={() => this.clickButton(2)}
-                    ref={(ref) => (this.keys[2] = ref!)}
-                  >
-                    <span className="number">2</span>
-                    <span className="alphabet">ABC</span>
+                  <div className="key-wrapper key-2">
+                    <div
+                      className="key"
+                      onClick={() => this.clickButton(2)}
+                      ref={(ref) => (this.keys[2] = ref!)}
+                    >
+                      <span className="number">2</span>
+                      <span className="alphabet">ABC</span>
+                    </div>
                   </div>
-                  <div
-                    className="key key-3"
-                    onClick={() => this.clickButton(3)}
-                    ref={(ref) => (this.keys[3] = ref!)}
-                  >
-                    <span className="number">3</span>
-                    <span className="alphabet">DEF</span>
+                  <div className="key-wrapper key-3">
+                    <div
+                      className="key"
+                      onClick={() => this.clickButton(3)}
+                      ref={(ref) => (this.keys[3] = ref!)}
+                    >
+                      <span className="number">3</span>
+                      <span className="alphabet">DEF</span>
+                    </div>
                   </div>
-                  <div
-                    className="key key-4"
-                    onClick={() => this.clickButton(4)}
-                    ref={(ref) => (this.keys[4] = ref!)}
-                  >
-                    <span className="number">4</span>
-                    <span className="alphabet">GHI</span>
+                  <div className="key-wrapper key-4">
+                    <div
+                      className="key"
+                      onClick={() => this.clickButton(4)}
+                      ref={(ref) => (this.keys[4] = ref!)}
+                    >
+                      <span className="number">4</span>
+                      <span className="alphabet">GHI</span>
+                    </div>
                   </div>
-                  <div
-                    className="key key-5"
-                    onClick={() => this.clickButton(5)}
-                    ref={(ref) => (this.keys[5] = ref!)}
-                  >
-                    <span className="number">5</span>
-                    <span className="alphabet">JKL</span>
+                  <div className="key-wrapper key-5">
+                    <div
+                      className="key"
+                      onClick={() => this.clickButton(5)}
+                      ref={(ref) => (this.keys[5] = ref!)}
+                    >
+                      <span className="number">5</span>
+                      <span className="alphabet">JKL</span>
+                    </div>
                   </div>
-                  <div
-                    className="key key-6"
-                    onClick={() => this.clickButton(6)}
-                    ref={(ref) => (this.keys[6] = ref!)}
-                  >
-                    <span className="number">6</span>
-                    <span className="alphabet">MNO</span>
+                  <div className="key-wrapper key-6">
+                    <div
+                      className="key"
+                      onClick={() => this.clickButton(6)}
+                      ref={(ref) => (this.keys[6] = ref!)}
+                    >
+                      <span className="number">6</span>
+                      <span className="alphabet">MNO</span>
+                    </div>
                   </div>
-                  <div
-                    className="key key-7"
-                    onClick={() => this.clickButton(7)}
-                    ref={(ref) => (this.keys[7] = ref!)}
-                  >
-                    <span className="number">7</span>
-                    <span className="alphabet">PQRS</span>
+                  <div className="key-wrapper key-7">
+                    <div
+                      className="key"
+                      onClick={() => this.clickButton(7)}
+                      ref={(ref) => (this.keys[7] = ref!)}
+                    >
+                      <span className="number">7</span>
+                      <span className="alphabet">PQRS</span>
+                    </div>
                   </div>
-                  <div
-                    className="key key-8"
-                    onClick={() => this.clickButton(8)}
-                    ref={(ref) => (this.keys[8] = ref!)}
-                  >
-                    <span className="number">8</span>
-                    <span className="alphabet">TUV</span>
+                  <div className="key-wrapper key-8">
+                    <div
+                      className="key"
+                      onClick={() => this.clickButton(8)}
+                      ref={(ref) => (this.keys[8] = ref!)}
+                    >
+                      <span className="number">8</span>
+                      <span className="alphabet">TUV</span>
+                    </div>
                   </div>
-                  <div
-                    className="key key-9"
-                    onClick={() => this.clickButton(9)}
-                    ref={(ref) => (this.keys[9] = ref!)}
-                  >
-                    <span className="number">9</span>
-                    <span className="alphabet">WXYZ</span>
+                  <div className="key-wrapper key-9">
+                    <div
+                      className="key"
+                      onClick={() => this.clickButton(9)}
+                      ref={(ref) => (this.keys[9] = ref!)}
+                    >
+                      <div>
+                        <span className="number">9</span>
+                        <span className="alphabet">WXYZ</span>
+                      </div>
+                    </div>
                   </div>
-                  <div
-                    className="key key-0"
-                    onClick={() => this.clickButton(0)}
-                    ref={(ref) => (this.keys[0] = ref!)}
-                  >
-                    <span className="number number-0">0</span>
+                  <div className="key-wrapper key-0">
+                    <div
+                      className="key"
+                      onClick={() => this.clickButton(0)}
+                      ref={(ref) => (this.keys[0] = ref!)}
+                    >
+                      <span className="number number-0">0</span>
+                    </div>
                   </div>
                 </div>
                 <div className="bottom">

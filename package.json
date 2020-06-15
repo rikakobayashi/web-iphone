@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "node index.js",
-    "build": "webpack"
+    "build": "webpack",
+    "test": "webpack-dev-server"
   },
   "dependencies": {
     "express": "^4.17.1",

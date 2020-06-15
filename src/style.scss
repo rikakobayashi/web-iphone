@@ -90,7 +90,7 @@ body {
   height: 4%;
   text-align: center;
   font-size: 2vh;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 .blank {
@@ -241,17 +241,22 @@ body {
   }
 }
 
+.key-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .keys {
   height: 44.5%;
   width: 82%;
   display: grid;
-  margin: 10% auto;
+  margin: 9.5% auto;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   .key {
     background-color: #ffffff2e;
     border-radius: 50%;
-    margin: auto;
     width: 7.4vh;
     height: 7.4vh;
     text-align: center;
@@ -270,78 +275,83 @@ body {
     .alphabet {
       font-size: 1.8vh;
       display: inline-block;
-      transform: scale(0.6) translateY(4%);
-      letter-spacing: 0.2em;
+      transform: scale(0.55) translateY(4%);
+      letter-spacing: 0.28em;
       text-indent: 0.2em;
+      font-weight: 500;
     }
     // transform: translateY(10%) scale(1.1);
   }
-  .key-0 {
-    grid-row: 4/5;
-    grid-column: 2/3;
+}
+
+.key-0 {
+  grid-row: 4/5;
+  grid-column: 2/3;
+  .key {
     animation: 0.5s ease 0s 1 normal appear4;
+    justify-content: center;
     .number-0 {
-      transform: translateY(40%);
+      transform: translateY(0%);
     }
   }
-  .key-1,
-  .key-2,
-  .key-3 {
-    animation: 0.5s ease 0s 1 normal appear1;
+}
+.key-1 > .key,
+.key-2 > .key,
+.key-3 > .key {
+  animation: 0.5s ease 0s 1 normal appear1;
+}
+.key-4 > .key,
+.key-5 > .key,
+.key-6 > .key {
+  animation: 0.5s ease 0s 1 normal appear2;
+}
+.key-7 > .key,
+.key-8 > .key,
+.key-9 > .key {
+  animation: 0.5s ease 0s 1 normal appear3;
+}
+@keyframes appear1 {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
   }
-  .key-4,
-  .key-5,
-  .key-6 {
-    animation: 0.5s ease 0s 1 normal appear2;
+  70% {
   }
-  .key-7,
-  .key-8,
-  .key-9 {
-    animation: 0.5s ease 0s 1 normal appear3;
+}
+@keyframes appear2 {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
   }
-  @keyframes appear1 {
-    0% {
-      transform: scale(0.1);
-      opacity: 0;
-    }
-    70% {
-    }
+  10% {
+    transform: scale(0.1);
+    opacity: 0;
   }
-  @keyframes appear2 {
-    0% {
-      transform: scale(0.1);
-      opacity: 0;
-    }
-    10% {
-      transform: scale(0.1);
-      opacity: 0;
-    }
-    80% {
-    }
+  80% {
   }
-  @keyframes appear3 {
-    0% {
-      transform: scale(0.1);
-      opacity: 0;
-    }
-    20% {
-      transform: scale(0.1);
-      opacity: 0;
-    }
-    90% {
-    }
+}
+@keyframes appear3 {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
   }
-  @keyframes appear4 {
-    0% {
-      transform: scale(0.1);
-      opacity: 0;
-    }
-    30% {
-      transform: scale(0.1);
-      opacity: 0;
-    }
-    100% {
-    }
+  20% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  90% {
+  }
+}
+@keyframes appear4 {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  30% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  100% {
   }
 }
 
