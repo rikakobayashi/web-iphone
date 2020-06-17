@@ -3,7 +3,9 @@ import React from 'react'
 export default function Header() {
   return (
     <div className="header">
-      <div className="bezel bezel-left">SoftBank</div>
+      <div className="bezel bezel-left">
+        <div className="carrier">SoftBank</div>
+      </div>
       <div className="bezel bezel-wrapper"></div>
       <div className="bezel bezel-right">
         <div className="icon signal">

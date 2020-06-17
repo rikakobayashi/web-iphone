@@ -30,8 +30,10 @@ class App extends React.Component<AppProps, AppState> {
   }
 
   content: React.RefObject<HTMLDivElement> = React.createRef()
+  passcord: React.RefObject<HTMLDivElement> = React.createRef()
   keys: { [keys: number]: HTMLDivElement } = {}
   input: React.RefObject<HTMLDivElement> = React.createRef()
+  bottom: React.RefObject<HTMLDivElement> = React.createRef()
 
   componentDidMount() {
     this.setDateTime()
@@ -111,8 +113,10 @@ class App extends React.Component<AppProps, AppState> {
     const keyElements = document.getElementsByClassName('key')
     const keys = Array.from(keyElements)
     keys.forEach((key) => key.classList.add('key-out'))
-    this.content.current?.classList.add('background-out')
-    setTimeout(() => this.switchToLockScreen(keys), 150)
+    // this.content.current?.classList.add('background-out')
+    this.passcord.current?.classList.add('fadeout')
+    this.bottom.current?.classList.add('fadeout')
+    setTimeout(() => this.switchToLockScreen(keys), 200)
   }
 
   switchToLockScreen = (keys: Element[]) => {
@@ -121,8 +125,8 @@ class App extends React.Component<AppProps, AppState> {
       isLockScreen: true,
       pass: [],
     })
-    keys.forEach((key) => key.classList.remove('key-out'))
-    this.content.current?.classList.remove('background-out')
+    // keys.forEach((key) => key.classList.remove('key-out'))
+    // this.content.current?.classList.remove('background-out')
   }
 
   clickButton = (number: number) => {
@@ -148,16 +152,22 @@ class App extends React.Component<AppProps, AppState> {
         <div className="button button-left button-volume-up" />
         <div className="button button-left button-volume-down" />
         <div className="button button-right" onClick={this.switchPower} />
-        <div
-          className="body"
-          id="body"
-          style={
-            this.state.isPowerOn
-              ? { backgroundImage: `url(${this.state.img_url})` }
-              : undefined
-          }
-        >
-          <div className="bezel bezel-center" />
+        <div className="bezel bezel-center" />
+        <div className="body" id="body">
+          {this.state.isPowerOn ? (
+            <div
+              className={`background ${
+                !this.state.isLockScreen ? 'background-blur' : ''
+              }`}
+              style={{
+                backgroundImage: `url(${this.state.img_url})`,
+              }}
+            >
+              <div className="blur">
+                <div></div>
+              </div>
+            </div>
+          ) : undefined}
           {this.state.isPowerOn &&
             (this.state.isLockScreen ? (
               <div
@@ -170,10 +180,12 @@ class App extends React.Component<AppProps, AppState> {
                 <div className="time">{this.state.time}</div>
                 <div className="date">{this.state.date}</div>
                 <div className="blank"></div>
-                <div className="text">
-                  上にスワイプして
-                  <br />
-                  ロック解除
+                <div className="text-wrapper">
+                  <div className="text">
+                    上にスワイプして
+                    <br />
+                    ロック解除
+                  </div>
                 </div>
                 <div className="line-area">
                   <div className="line"></div>
@@ -183,7 +195,7 @@ class App extends React.Component<AppProps, AppState> {
               <div className="content" id="content" ref={this.content}>
                 <Header />
                 <Lock />
-                <div className="passcord">
+                <div className="passcord" ref={this.passcord}>
                   <div className="label">パスコードを入力</div>
                   <div className="input" id="input" ref={this.input}>
                     <span className="circle ">
@@ -207,7 +219,10 @@ class App extends React.Component<AppProps, AppState> {
                       onClick={() => this.clickButton(1)}
                       ref={(ref) => (this.keys[1] = ref!)}
                     >
-                      <span className="number">1</span>
+                      <div className="key-texts">
+                        <span className="number">1</span>
+                        <span className="alphabet"></span>
+                      </div>
                     </div>
                   </div>
                   <div className="key-wrapper key-2">
@@ -216,8 +231,10 @@ class App extends React.Component<AppProps, AppState> {
                       onClick={() => this.clickButton(2)}
                       ref={(ref) => (this.keys[2] = ref!)}
                     >
-                      <span className="number">2</span>
-                      <span className="alphabet">ABC</span>
+                      <div className="key-texts">
+                        <span className="number">2</span>
+                        <span className="alphabet">ABC</span>
+                      </div>
                     </div>
                   </div>
                   <div className="key-wrapper key-3">
@@ -226,8 +243,10 @@ class App extends React.Component<AppProps, AppState> {
                       onClick={() => this.clickButton(3)}
                       ref={(ref) => (this.keys[3] = ref!)}
                     >
-                      <span className="number">3</span>
-                      <span className="alphabet">DEF</span>
+                      <div className="key-texts">
+                        <span className="number">3</span>
+                        <span className="alphabet">DEF</span>
+                      </div>
                     </div>
                   </div>
                   <div className="key-wrapper key-4">
@@ -236,8 +255,10 @@ class App extends React.Component<AppProps, AppState> {
                       onClick={() => this.clickButton(4)}
                       ref={(ref) => (this.keys[4] = ref!)}
                     >
-                      <span className="number">4</span>
-                      <span className="alphabet">GHI</span>
+                      <div className="key-texts">
+                        <span className="number">4</span>
+                        <span className="alphabet">GHI</span>
+                      </div>
                     </div>
                   </div>
                   <div className="key-wrapper key-5">
@@ -246,8 +267,10 @@ class App extends React.Component<AppProps, AppState> {
                       onClick={() => this.clickButton(5)}
                       ref={(ref) => (this.keys[5] = ref!)}
                     >
-                      <span className="number">5</span>
-                      <span className="alphabet">JKL</span>
+                      <div className="key-texts">
+                        <span className="number">5</span>
+                        <span className="alphabet">JKL</span>
+                      </div>
                     </div>
                   </div>
                   <div className="key-wrapper key-6">
@@ -256,8 +279,10 @@ class App extends React.Component<AppProps, AppState> {
                       onClick={() => this.clickButton(6)}
                       ref={(ref) => (this.keys[6] = ref!)}
                     >
-                      <span className="number">6</span>
-                      <span className="alphabet">MNO</span>
+                      <div className="key-texts">
+                        <span className="number">6</span>
+                        <span className="alphabet">MNO</span>
+                      </div>
                     </div>
                   </div>
                   <div className="key-wrapper key-7">
@@ -266,8 +291,10 @@ class App extends React.Component<AppProps, AppState> {
                       onClick={() => this.clickButton(7)}
                       ref={(ref) => (this.keys[7] = ref!)}
                     >
-                      <span className="number">7</span>
-                      <span className="alphabet">PQRS</span>
+                      <div className="key-texts">
+                        <span className="number">7</span>
+                        <span className="alphabet">PQRS</span>
+                      </div>
                     </div>
                   </div>
                   <div className="key-wrapper key-8">
@@ -276,8 +303,10 @@ class App extends React.Component<AppProps, AppState> {
                       onClick={() => this.clickButton(8)}
                       ref={(ref) => (this.keys[8] = ref!)}
                     >
-                      <span className="number">8</span>
-                      <span className="alphabet">TUV</span>
+                      <div className="key-texts">
+                        <span className="number">8</span>
+                        <span className="alphabet">TUV</span>
+                      </div>
                     </div>
                   </div>
                   <div className="key-wrapper key-9">
@@ -286,8 +315,10 @@ class App extends React.Component<AppProps, AppState> {
                       onClick={() => this.clickButton(9)}
                       ref={(ref) => (this.keys[9] = ref!)}
                     >
-                      <span className="number">9</span>
-                      <span className="alphabet">WXYZ</span>
+                      <div className="key-texts">
+                        <span className="number">9</span>
+                        <span className="alphabet">WXYZ</span>
+                      </div>
                     </div>
                   </div>
                   <div className="key-wrapper key-0">
@@ -296,11 +327,13 @@ class App extends React.Component<AppProps, AppState> {
                       onClick={() => this.clickButton(0)}
                       ref={(ref) => (this.keys[0] = ref!)}
                     >
-                      <span className="number number-0">0</span>
+                      <div className="key-texts">
+                        <span className="number number-0">0</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div className="bottom">
+                <div className="bottom" ref={this.bottom}>
                   <div className="emergency">緊急</div>
                   {this.state.pass.length === 0 ? (
                     <div className="cancel" onClick={this.cancel}>
