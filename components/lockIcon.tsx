@@ -1,7 +1,6 @@
 import React from 'react'
-import { render } from 'react-dom'
 
-export default function Lock() {
+export default function LockIcon() {
   return (
     <div className="lock">
       <svg
