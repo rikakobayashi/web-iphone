@@ -4,7 +4,7 @@ import './style.scss'
 import { parse } from 'querystring'
 import LockScreen from '../components/lockScreen'
 import Passcord from '../components/passcord'
-import Background from '../components/Background'
+import Background from '../components/background'
 import Buttons from '../components/buttons'
 
 interface AppProps {}
