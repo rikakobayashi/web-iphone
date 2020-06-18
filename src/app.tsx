@@ -50,7 +50,6 @@ class App extends React.Component<AppProps, AppState> {
   }
 
   switchPower = () => {
-    console.log(this.state.isPowerOn ? 'off' : 'on')
     this.setState({
       isPowerOn: !this.state.isPowerOn,
       isLockScreen: true,
@@ -72,7 +71,6 @@ class App extends React.Component<AppProps, AppState> {
   }
 
   render() {
-    console.log(this.state.isLockScreen)
     return (
       <div className="wrapper">
         <Buttons switchPower={this.switchPower} />
