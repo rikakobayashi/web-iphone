@@ -45,7 +45,6 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  transform: scale(1.01);
 }
 
 .background-blur {
@@ -208,22 +207,7 @@ body {
   width: 100%;
   height: 100%;
   position: relative;
-  // -webkit-backdrop-filter: blur(10px);
-  // backdrop-filter: blur(10px);
-  // background: #00000060;
-  // border-radius: 4vh;
   cursor: default;
-  // animation: 0.2s linear 0s 1 normal appear-content;
-
-  // @keyframes appear-content {
-  //   0% {
-  //     background: transparent;
-  //   }
-
-  //   100% {
-  //     // background: #00000050;
-  //   }
-  // }
 }
 
 .bezel-center {
@@ -631,18 +615,6 @@ body {
     opacity: 0;
   }
 }
-
-// @keyframes background_out {
-//   0% {
-//     background: #00000050;
-//   }
-
-//   100% {
-//     background: transparent;
-//     -webkit-backdrop-filter: blur(0px);
-//     backdrop-filter: blur(0px);
-//   }
-// }
 
 @keyframes fadeout {
   0% {
