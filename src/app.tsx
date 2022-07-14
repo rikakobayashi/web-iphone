@@ -21,8 +21,8 @@ class App extends React.Component<AppProps, AppState> {
     this.state = {
       isLockScreen: true,
       isPowerOn: true,
-      img_url: 'https://pics.prcm.jp/566b9c2d0ab74/82298202/png/82298202.png',
-    }
+      img_url: "https://i.ibb.co/4Yy15Sg/eQiyld.png",
+    };
   }
 
   componentDidMount() {
